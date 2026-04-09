@@ -23,8 +23,11 @@ public class TeamTest {
     public void equal_check() {
         Team team2 = new Team("not equal");
         Team team3 = new Team("test-team");
+        
         assertEquals(team.equals(team),true);
-         assertEquals(team.equals(team3),true);
+        assertEquals(team.equals(team3),true);
+        team3.addMember("notamember");
+        assertEquals(team.equals(team3),false);
         assertEquals(team.equals(team2), false);
         assertEquals(team.equals(1),false);
     }
